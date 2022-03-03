@@ -1,1 +1,19 @@
-<h1>Hola</h1>
+<html>
+    <head><title>Del campo a tu casa</title></head>
+    <body>
+        <div>
+            <h1><a href="/">Naranjas Valencianas</a></h1>
+        </div>
+        <div>
+            <h2>Realiza tu pedido</h2>
+            {% for productos in productos %}
+            <div>
+                <p>{{productos.name}}</p>
+                {{productos.imagen}}
+                <p>{{productos.precio}}</p>
+            </div>
+
+            {% endfor %}
+        </div>
+    </body>
+</html>
