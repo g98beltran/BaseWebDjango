@@ -19,7 +19,8 @@
                     {% for productos in productos %}
                     <div class="products">
                         <h2><a href="">{{productos.name}}</a></h2>
-                        {{productos.imagen}}
+                       
+                        <img src="/static/imagenes/{{productos.imagen}}">
                         <p>{{productos.precio}}</p>
                     </div>
                     {% endfor %}
