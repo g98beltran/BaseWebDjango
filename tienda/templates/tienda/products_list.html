@@ -1,31 +1,10 @@
-{% load static %}
-<html>
-    <head>
-        <title>Del campo a tu casa</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/tienda.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class="page-header">
-            <h1><a href="/">Naranjas Valencianas</a></h1>
-            <h4>Realiza tu pedido</h4>
+{% extends 'tienda/base.html' %}
+{% block content %}
+    {% for productos in productos %}
+        <div class="products">
+            <h2><a href="{% url 'descripcion' pk=productos.pk %}">{{productos.name}}</a></h2>                       
+            <img src="/static/imagenes/{{productos.imagen}}">
+            <p>{{productos.precio}}</p>
         </div>
-
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for productos in productos %}
-                    <div class="products">
-                        <h2><a href="">{{productos.name}}</a></h2>
-                       
-                        <img src="/static/imagenes/{{productos.imagen}}">
-                        <p>{{productos.precio}}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+    {% endfor %}
+{% endblock %}

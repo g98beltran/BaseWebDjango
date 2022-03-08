@@ -26,6 +26,8 @@ class Producto(models.Model):
     digital = models.BooleanField(default=False, null=True, blank=False)
     # Nos ayudara a subir las imagenes de forma dinamica
     imagen = models.ImageField(null=True, blank=True)
+    descripcion = models.TextField(max_length=200, null=True)
+    temporada = models.TextField(max_length=100,null=True)
 
     def __str__(self):
         return self.name

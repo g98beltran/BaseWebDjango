@@ -1,0 +1,18 @@
+{% extends 'tienda/base.html' %}
+{% block content %}
+    <div class="products">
+        <h2><a href="">{{productos.name}}</a></h2>            
+        <img src="/static/imagenes/{{productos.imagen}}">
+        <p>{{productos.precio}} euros</p>
+        {% if productos.descripcion %}
+            <div class="desc">
+                <h3>{{ productos.descripcion }}</h3>
+            </div>
+        {% endif %}
+        {% if productos.temporada %}
+            <div class="temp">
+                <h3>{{ productos.temporada }}</h3>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
